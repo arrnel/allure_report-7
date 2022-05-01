@@ -22,7 +22,7 @@ public class ItemsPageActions {
      */
     public ItemsPageActions assertPageTitle(String headerText) {
 
-        locator.pageTitle().shouldBe(visible).shouldHave(text(headerText));
+        locator.pageTitle().shouldBe(visible).scrollIntoView(false).shouldHave(text(headerText));
 
         return this;
 
