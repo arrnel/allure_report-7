@@ -25,6 +25,7 @@ public class TestBase {
         Configuration.browserSize = "1920x1080";
         Configuration.timeout = 8000;
         Configuration.pageLoadTimeout = 10000;
+        Configuration.savePageSource = true;
 
         if (testRunningMode == TestRunningMode.CHROME_LOCAL){
             localChromeWebDriver();

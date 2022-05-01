@@ -22,7 +22,7 @@ public class AllureActions {
 
     @Attachment(value="{pageName}", type="text/html", fileExtension = "html")
     public byte[] attachPage(String pageName){
-        return ((TakesScreenshot)WebDriverRunner.getWebDriver()).getScreenshotAs(OutputType.BYTES);
+        return WebDriverRunner.getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
     }
 
 

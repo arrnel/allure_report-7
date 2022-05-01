@@ -1,10 +1,9 @@
 package com.arrnel.project.sbermegamarket.pages.item;
 
-import io.qameta.allure.Allure;
 import org.openqa.selenium.ElementClickInterceptedException;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static io.qameta.allure.Allure.step;
 
 public class ItemPageActions {
@@ -15,7 +14,7 @@ public class ItemPageActions {
 
         try {
             clickButtonAllCharacteristics();
-        } catch (Exception ex) {
+        } catch (ElementClickInterceptedException ex) {
             closeBonusBanner().clickButtonAllCharacteristics();
         }
 
