@@ -174,7 +174,7 @@ class AllureParameterizedTests extends TestBase {
             "www.rambler.ru"}
     )
     @DisplayName("Тесты ленивой жопки 1")
-    @Description("Параметризованный тест с провайдером ValueSource<br/>")
+    @Description("Параметризованный тест с провайдером ValueSource")
     @ParameterizedTest(name = "Проверка ссылки страницы, {0}")
     void test003(String siteDomain) {
 
@@ -188,7 +188,7 @@ class AllureParameterizedTests extends TestBase {
 
     @Story("EnumSource")
     @EnumSource(Site.class)
-    @Description("Параметризованный тест с провайдером EnumSource<br/>")
+    @Description("Параметризованный тест с провайдером EnumSource")
     @DisplayName("Тесты ленивой жопки 2")
     @ParameterizedTest(name = "Проверка ссылки страницы, {0}")
     void test004(Site site) {
