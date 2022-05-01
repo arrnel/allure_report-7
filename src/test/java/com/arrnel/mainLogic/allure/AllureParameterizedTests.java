@@ -193,6 +193,8 @@ class AllureParameterizedTests extends TestBase {
     @ParameterizedTest(name = "Проверка ссылки страницы, {0}")
     void test004(Site site) {
 
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         String expectedUrl = getSitesURL(site);
         openPage(expectedUrl);
         String actualUrl = WebDriverRunner.getWebDriver().getCurrentUrl();
