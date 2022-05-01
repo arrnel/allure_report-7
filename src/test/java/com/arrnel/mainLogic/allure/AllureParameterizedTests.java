@@ -29,7 +29,7 @@ import static io.qameta.allure.Allure.step;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Owner("@arrnel")
-@Slf4j
+@Feature(value = "Какая-то фича")
 @DisplayName("Параметризованные тесты + Allure")
 class AllureParameterizedTests extends TestBase {
 
