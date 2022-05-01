@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id "io.qameta.allure" version "2.9.6"
+}
+
+group 'qa.guru.allure'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def selenideVersion = '6.4.0',
+    junitVersion = "5.8.2",
+    javaFakerVersion = "1.0.2",
+    lombokVersion = "1.18.24",
+    allureVersion = "2.17.3"
+
+dependencies {
+
+    implementation(
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "com.codeborne:selenide:$selenideVersion",
+            "com.github.javafaker:javafaker:$javaFakerVersion",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "org.projectlombok:lombok:$lombokVersion"
+
+    )
+
+    annotationProcessor(
+            "org.projectlombok:lombok:$lombokVersion"
+    )
+
+}
+
+allure {
+    report {
+        version.set("2.17.3") //версия Allure Report (https://github.com/allure-framework/allure2)
+    }
+    adapter {
+        aspectjWeaver.set(true) // обработка аннотации @Step
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.17.3") //версия Allure JUnit5 (https://github.com/allure-framework/allure-java)
+            }
+        }
+    }
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
